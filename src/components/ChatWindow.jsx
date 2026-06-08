@@ -11,8 +11,9 @@ function ChatWindow({ messages, loading }) {
   return (
     <div
       style={{
-        width: "800px",
-        height: "400px",
+        width: "90vw",
+        maxWidth: "800px",
+        height: "50vh",
         backgroundColor: "#e7ab7ae3",
         borderRadius: "15px",
         padding: "20px",

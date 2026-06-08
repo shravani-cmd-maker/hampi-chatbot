@@ -10,7 +10,8 @@ function ChatInput({
         display: "flex",
         gap: "10px",
         marginTop: "15px",
-        width: "800px",
+        width: "90vw",
+        maxWidth: "800px",
       }}
     >
       <input
@@ -37,7 +38,7 @@ function ChatInput({
           color: "white",
           border: "none",
           borderRadius: "10px",
-          padding: "12px 20px",
+         padding: "10px 14px",
           cursor: "pointer",
           fontWeight: "bold",
         }}

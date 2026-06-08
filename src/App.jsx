@@ -12,6 +12,7 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [showMenu, setShowMenu] = useState(false);
+  const isMobile = window.innerWidth < 768;
 
 function handleLoginSuccess(
   credentialResponse
@@ -139,6 +140,8 @@ async function handleSuggestedQuestion(question) {
 <div
   style={{
     minHeight: "100vh",
+    overflow: "hidden",
+    height: "100vh",
 
     backgroundImage:
   "url('https://www.holidaymonk.com/wp-content/uploads/2020/10/Vastuchitra_Stone-Chariot-Hampi.jpg')",
@@ -156,8 +159,9 @@ async function handleSuggestedQuestion(question) {
 {!user ? (
   <div
     style={{
-      width: "750px",
-      height: "500px",
+width: "90vw",
+maxWidth: "750px",
+minHeight: "500px",
 
       backgroundColor: "rgba(0,0,0,0.55)",
       backdropFilter: "blur(8px)",
@@ -178,7 +182,7 @@ async function handleSuggestedQuestion(question) {
   >
     <h1
       style={{
-        fontSize: "25px",
+       fontSize: "clamp(24px, 5vw, 32px)",
         fontWeight: "700",
         background:
           "linear-gradient(90deg, #ca7e0c, #e7d90a)",
@@ -230,21 +234,21 @@ async function handleSuggestedQuestion(question) {
     setShowMenu(!showMenu)
   }
   style={{
-    width: "40px",
-    height: "40px",
-    borderRadius: "50%",
-    backgroundColor: "#ff9900",
-    color: "white",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontWeight: "bold",
-    fontSize: "18px",
-    cursor: "pointer",
-    border: "2px solid white",
-    boxShadow:
-      "0px 2px 8px rgba(0,0,0,0.3)",
-  }}
+  width: "28px",
+  height: "28px",
+  borderRadius: "50%",
+  backgroundColor: "#ff9900",
+  color: "white",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  fontWeight: "bold",
+  fontSize: "13px",
+  cursor: "pointer",
+  border: "1px solid white",
+  boxShadow:
+    "0px 2px 5px rgba(0,0,0,0.3)",
+}}
 >
   {user?.name?.charAt(0).toUpperCase()}
 </div>
@@ -253,8 +257,8 @@ async function handleSuggestedQuestion(question) {
               <div
                 style={{
                   position: "absolute",
-                  top: "60px",
-                  right: "0",
+                  top: "10px",
+                  right: "10",
                   backgroundColor: "white",
                   borderRadius: "10px",
                   padding: "10px",
@@ -291,7 +295,7 @@ async function handleSuggestedQuestion(question) {
         "linear-gradient(90deg, #ff7300f1, #ffe600)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
-      fontSize: "32px",
+      fontSize: isMobile ? "22px" : "32px",
       fontWeight: "400",
       marginBottom: "5px",
     }}
@@ -302,8 +306,8 @@ async function handleSuggestedQuestion(question) {
   <p
     style={{
       color: "white",
-      fontSize: "18px",
-      marginBottom: "15px",
+      fontSize: "18px",fontSize: isMobile ? "14px" : "18px",
+       marginBottom: "15px",
     }}
   >
     Hi, {user.name} !
@@ -316,11 +320,12 @@ async function handleSuggestedQuestion(question) {
             />
             <div
   style={{
-    width: "800px",
+  width: "90vw",
+maxWidth: "800px",
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    gap: "10px",
+    gap: "6px",
     marginBottom: "15px",
     justifyContent: "center",
   }}
@@ -337,7 +342,8 @@ async function handleSuggestedQuestion(question) {
         border: "1px solid #ff9900",
         backgroundColor: "#fff8e6",
         cursor: "pointer",
-        whiteSpace: "nowrap",
+       whiteSpace: "normal",
+      textAlign: "center",
       }}
     >
       {question}
