@@ -152,7 +152,7 @@ async function handleSuggestedQuestion(question) {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-
+marginTop: isMobile ? "60px" : "0px",
     position: "relative",
   }}
 >
@@ -225,8 +225,8 @@ minHeight: "500px",
           <div
             style={{
               position: "absolute",
-              top: "20px",
-              right: "20px",
+top: isMobile ? "65px" : "15px",
+right: "15px",
             }}
           >
             <div
@@ -337,7 +337,8 @@ maxWidth: "800px",
   handleSuggestedQuestion(question)
 }
       style={{
-        padding: "8px 14px",
+        padding: isMobile ? "6px 10px" : "8px 14px",
+fontSize: isMobile ? "14px" : "16px",
         borderRadius: "20px",
         border: "1px solid #ff9900",
         backgroundColor: "#fff8e6",

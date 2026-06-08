@@ -13,7 +13,8 @@ function ChatWindow({ messages, loading }) {
       style={{
         width: "90vw",
         maxWidth: "800px",
-        height: "50vh",
+      height: "40vh",
+maxHeight: "400px",
         backgroundColor: "#e7ab7ae3",
         borderRadius: "15px",
         padding: "20px",
