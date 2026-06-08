@@ -257,7 +257,7 @@ minHeight: "500px",
               <div
                 style={{
                   position: "absolute",
-                  top: "10px",
+                  top: "35px",
                   right: "10",
                   backgroundColor: "white",
                   borderRadius: "10px",
